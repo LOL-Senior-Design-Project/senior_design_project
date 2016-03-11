@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'users/new' => 'users#new'
 
   get 'sessions/new' => 'sessions#new'
@@ -11,10 +12,21 @@ Rails.application.routes.draw do
   get 'about' =>'static_pages#about'
   
   get 'contact' =>'static_pages#contact'
+  get 'summoners' => 'summoners#lookup'
+  post 'summoners' => 'summoners#get_summoner'
+  get 'stats' =>  'summoners#stats' 
+  
+  # post 'stats' => 'summoners#get_champ_stats'
+  #match "/get_summoner/", :controller => 'summoners',  :action => 'get_summoner'
 
+  
+  
   resources :users
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  
+ 
+  
 end

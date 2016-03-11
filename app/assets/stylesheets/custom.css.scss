@@ -1,7 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$gray-medium-light: #eaeaea;
+// $gray-medium-light: #eaeaea;
+
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -9,14 +10,28 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+// html body { 
+//     background: url(640987.jpg) no-repeat center center fixed; 
+//     -webkit-background-size: cover;
+//     -moz-background-size: cover;
+//     -o-background-size: cover;
+//     background-size: cover;
+// }
+$body-bg: transparent; 
 
 
 
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 60px; 
+  background: url(640987.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 
 section {
   overflow: auto;
@@ -56,6 +71,11 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: #777;
+}
+
+h3 {
+  color: #87CEFA;
+  text-align: center;
 }
 
 p {

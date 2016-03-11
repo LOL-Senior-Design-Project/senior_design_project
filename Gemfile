@@ -31,8 +31,8 @@ gem 'rails', '4.2.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-
+gem "json"
+gem 'httparty'
 gem 'bcrypt',                  '3.1.7'
 gem "figaro"
 gem 'faker',                   '1.4.2'
