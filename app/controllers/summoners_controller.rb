@@ -24,7 +24,7 @@ class SummonersController < ApplicationController
   end
   
   def get_stats
-     response = RIOT_API.new.get_champ_stats(:summoner_id) 
+     response = RIOT_API.new.get_champ_stats(:summoner_id,'SEASON2016') 
      @stats = response
   end
     
@@ -39,5 +39,9 @@ class SummonersController < ApplicationController
 
     return {screen_name: screen_name, id: id, level: level, icon: icon}
   end
+  
+    def parse_stats(response)
+    
+    end
 
 end
