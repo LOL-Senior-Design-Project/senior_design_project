@@ -12,11 +12,11 @@ CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion'+KEY
         return response
         # method to get summoner id
     end
-    def get_champ
-        response = HTTParty.get(CHAMPION)
-        return response
-    end
-    def get_champ_stats(c)
+    # def getchamp
+    #     response = HTTParty.get(CHAMPION)
+    #     return response
+    # end
+    def get_champ_stats(summonerId)
         response = HTTParty.get(LOL_URL + REGION + 'v1.3/stats/by-summoner/' + champId + '/ranked?season=' + season + KEY+ ENV["pusher_key"])
         return response
     end
