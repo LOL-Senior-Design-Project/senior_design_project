@@ -1,0 +1,6 @@
+<h1>Champion Index </h1>
+  <% @champions = Champion.get_champion %>
+  <% for i..@champions.length  -%>
+    NAME <%= @champions[i]['name']%>
+  <% end -%>
+
