@@ -23,7 +23,6 @@ class SummonersController < ApplicationController
       
   end
 
-  def get_win_rate_for_game_type
     
   
   def get_stats

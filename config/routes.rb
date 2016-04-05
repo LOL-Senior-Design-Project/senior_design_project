@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   
   get 'champions' => 'champions#cindex'
   post 'champions' => 'champions#get_champion'
-  get 'cindex' => 'champions#cindex'
   # post 'stats' => 'summoners#get_champ_stats'
   #match "/get_summoner/", :controller => 'summoners',  :action => 'get_summoner'
 
