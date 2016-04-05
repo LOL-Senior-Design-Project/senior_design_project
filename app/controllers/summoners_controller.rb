@@ -22,6 +22,9 @@ class SummonersController < ApplicationController
     end
       
   end
+
+  def get_win_rate_for_game_type
+    
   
   def get_stats
      response = RIOT_API.new.get_champ_stats(:summoner_id) 
