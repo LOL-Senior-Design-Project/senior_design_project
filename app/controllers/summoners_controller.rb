@@ -2,6 +2,8 @@ require 'riot_api_helper'
 class SummonersController < ApplicationController
   PROFILE_ICON = 'http://ddragon.leagueoflegends.com/cdn/6.5.1/img/profileicon/'
 
+  
+
   def stats
   
   end
@@ -38,17 +40,32 @@ class SummonersController < ApplicationController
     end
       
   end
-  def get_win_rate_for_game_type
-    h = RIOT_API.new.get_champ_stats(:summoner_id)
-    arr = Hash.new
-    for i in 0...h["playerStatSummaries"].length
-      key = h["playerStatSummaries"][i]["playerStatSummaryType"]
-      val = h["playerStatSummaries"][i]["wins"]
-      arr[key] = val
+  def game_type_wins
+    h = RIOT_API.new.get_champ_stats(@summoner[:id].to_s)
+    
+    if (h["playerStatSummaries"].present?)
+      return_arr = Array.new
+      for i in 0...h["playerStatSummaries"].length
+        arr = Hash.new
+        arr[:name] = h["playerStatSummaries"][i]["playerStatSummaryType"]
+        arr[:value] = h["playerStatSummaries"][i]["wins"]
+        # arr[key] = val
+        return_arr << arr
+      end
+      return return_arr.to_json
+    else
+      return []
     end
-    return arr
+  end
+  helper_method :game_type_wins
+
+  def test_func
+    return [1,3,2,5,9]
+    # return "it works!"
+
   end
 
+  helper_method :test_func 
 
   def get_stats
      response = RIOT_API.new.get_champ_stats(:summoner_id,'SEASON2016') 
