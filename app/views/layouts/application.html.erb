@@ -13,13 +13,22 @@
       <div class="container">
         <%= link_to "LOLTeam", root_path, id: "logo" %>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   root_path %></li>
-            <li><%= link_to "Help",   help_path %></li>
-            <li><%= link_to "Log in", login_path %></li>
-          </ul>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right ">
+              <li><%= link_to "Home",   root_path %></li>
+              <li><%= link_to "Help",   help_path %></li>
+              <li><%= link_to "Log in", login_path %></li>
+              <li><%= link_to "Champions", champions_path %></li>
+            
+           <li> <%= form_tag summoners_path, html: {class: 'form-search', role: 'form-inline',  method: 'post'} do %>
+              <%= search_field_tag 'search', nil, class: 'form-control', placeholder: 'Search'  %>
+              <%= submit_tag "Submit", class: 'btn btn-default', :name => nil %>
+            <% end %> </li>
+            </ul>
+          </div>
         </nav>
       </div>
+      
     </header>
       <div class="container">
       <% flash.each do |message_type, message| %>

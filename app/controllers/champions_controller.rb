@@ -1,18 +1,19 @@
+require 'riot_api_helper'
 class ChampionsController < ApplicationController
 CHAMP_SQR = "http://ddragon.leagueoflegends.com/cdn/6.5.1/img/champion/"
-    def get_champion
+    def cindex
         response = RIOT_API.new.get_champ
-        @champions = response['data']
-        byebug
-      
-        # for i in 0..@champions.length
-        #     champ_id = @champions[i]['id']
-        #     champ_title = @champions[i]['title']
-        #     champ_name = @champions[i]['name']
-        #     champ_key = @champions[i]['key']
-        #     champ_img = CHAMP_SQR + champ_name + '.png'
-        # end
-        render 'cindex'
-        
+        @champions = parse_champion(response)
+    end
+    
+    def parse_champion(response)
+        ar = Array.new
+     response['data'].each do |key| 
+         im = key[1]['image']['full']
+         
+         image = CHAMP_SQR + im
+         ar << image 
+     end
+     return ar
     end
 end

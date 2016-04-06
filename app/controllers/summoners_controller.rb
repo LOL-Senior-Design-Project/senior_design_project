@@ -30,20 +30,15 @@ class SummonersController < ApplicationController
      @stats = response
   end
     
-    def parse_response(response)
-        # if response.code(("400")|| ("401")||("404")||("415")||("429")||("500")||("503"))
-        #     return {status: status_code}
-        # end
-        screen_name = response.first[1]['name']
-        id = response.first[1]['id']
-        level = response.first[1]['summonerLevel']
-        icon = PROFILE_ICON + response.first[1]["profileIconId"].to_s + '.png'
-
-    return {screen_name: screen_name, id: id, level: level, icon: icon}
-  end
-  
-    def parse_stats(response)
-    
-    end
+def parse_response(response)
+  # if response.code(("400")|| ("401")||("404")||("415")||("429")||("500")||("503"))
+  #     return {status: status_code}
+  # end
+  screen_name = response.first[1]['name']
+  id = response.first[1]['id']
+  level = response.first[1]['summonerLevel']
+  icon = PROFILE_ICON + response.first[1]["profileIconId"].to_s + '.png'
+  return {screen_name: screen_name, id: id, level: level, icon: icon}
+end
 
 end
