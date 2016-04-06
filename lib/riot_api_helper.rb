@@ -5,7 +5,12 @@ KEY = 'api_key='
 REGION= '/api/lol/na/'
 SUMMONER = 'v1.4/summoner/by-name/'
 SEASON = "season=SEASON2016"
+<<<<<<< HEAD
 CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=image&'+KEY + ENV["pusher_key"]
+=======
+# CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion'+KEY + ENV["pusher_key"]
+CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion'+KEY + "fee99c75-dcea-4b6b-948f-bf32b93feb81"
+>>>>>>> df4573d53b1ccdb8e775f31a505ca5e89a51d276
 
     
     def get_summoner_id(name)        # response = HTTParty.get(LOL_URL + REGION + SUMMONER + name + "?" +  KEY + ENV["pusher_key"])

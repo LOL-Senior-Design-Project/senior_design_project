@@ -33,6 +33,8 @@ gem 'rails', '4.2.2'
 # gem 'capistrano-rails', group: :development
 gem "d3-rails"
 gem "json"
+gem "d3-rails"
+gem "d3js-rails"
 gem 'httparty'
 gem 'bcrypt',                  '3.1.7'
 gem "figaro"
