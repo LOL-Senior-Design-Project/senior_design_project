@@ -38,7 +38,6 @@ class SummonersController < ApplicationController
     end
       
   end
-
   def get_win_rate_for_game_type
     h = RIOT_API.new.get_champ_stats(:summoner_id)
     arr = Hash.new
@@ -50,8 +49,7 @@ class SummonersController < ApplicationController
     return arr
   end
 
-    
-  
+
   def get_stats
      response = RIOT_API.new.get_champ_stats(:summoner_id,'SEASON2016') 
      @stats = response
