@@ -16,11 +16,12 @@ Rails.application.routes.draw do
   post 'summoners' => 'summoners#get_summoner'
   get 'stats' =>  'summoners#stats' 
   
+  #get 'champions' => 'champions#get_champions'
   get 'champions' => 'champions#cindex'
-  post 'champions' => 'champions#get_champion'
+  #post 'champions' => 'champions#get_champions'
   # post 'stats' => 'summoners#get_champ_stats'
   #match "/get_summoner/", :controller => 'summoners',  :action => 'get_summoner'
-
+  
   
   
   resources :users
