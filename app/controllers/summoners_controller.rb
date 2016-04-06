@@ -5,9 +5,25 @@ class SummonersController < ApplicationController
   def stats
   
   end
+
+
+  def new
+    @summoner = Summoner.new
+  end
+
+  def create
+    @summoner = Summoner.new(summoner_params)
+    if @summoner.save
+      log_in @summoner
+      flash[:sucess] = "Welcome to the Address Book App"
+      redirect_to @summoner
+    else
+      render 'new'
+    end
+  end
   
   def get_summoner
-    if params[:summoner_name] == ""
+    if params[:summoner_name].empty?
         flash[:error] = "Summoner name cannot be blank"
         render 'lookup'
     else 
@@ -24,6 +40,16 @@ class SummonersController < ApplicationController
   end
 
   def get_win_rate_for_game_type
+    h = RIOT_API.new.get_champ_stats(:summoner_id)
+    arr = Hash.new
+    for i in 0...h["playerStatSummaries"].length
+      key = h["playerStatSummaries"][i]["playerStatSummaryType"]
+      val = h["playerStatSummaries"][i]["wins"]
+      arr[key] = val
+    end
+    return arr
+  end
+
     
   
   def get_stats

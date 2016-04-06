@@ -5,7 +5,8 @@ KEY = 'api_key='
 REGION= '/api/lol/na/'
 SUMMONER = 'v1.4/summoner/by-name/'
 SEASON = "season=SEASON2016"
-CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion'+KEY + ENV["pusher_key"]
+# CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion'+KEY + ENV["pusher_key"]
+CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion'+KEY + "fee99c75-dcea-4b6b-948f-bf32b93feb81"
 
     
     def get_summoner_id(name)
