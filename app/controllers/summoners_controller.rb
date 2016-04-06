@@ -25,7 +25,7 @@ class SummonersController < ApplicationController
   end
   
   def get_summoner
-    if params[:summoner_name].empty?
+    unless params[:summoner_name].present?
         flash[:error] = "Summoner name cannot be blank"
         render 'lookup'
     else 
