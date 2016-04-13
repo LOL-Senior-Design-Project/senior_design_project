@@ -11,9 +11,11 @@ CHAMP_SQR = "http://ddragon.leagueoflegends.com/cdn/6.5.1/img/champion/"
      response['data'].each do |key| 
          im = key[1]['image']['full']
          
+         
          image = CHAMP_SQR + im
          ar << image 
      end
+     
      return ar
     end
 end
