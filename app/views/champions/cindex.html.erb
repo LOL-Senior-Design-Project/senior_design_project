@@ -1,9 +1,27 @@
 <h1>Champion Index </h1>
-
+	<% i = 0%>
+	<table class="img-list">
   <% @champions.each do |hash|  %>
+  
+  <% if i%7 == 0 %>
+  	<tr>
+  <% end %>
+
+
     <% result = hash['image'] %>
     <% result_title = hash['title'] %>
-    <a title= <% result_title %> >
+    <td>
+    <div id="wrapper">
+    
       <%= image_tag result %>
-      </a>
+      <div class="text"> <%= result_title %> </div>
+      </div>
+      </td>
+
+      
+
+
+      <% i=i+1 %>
+     
     <% end %>
+</table>
