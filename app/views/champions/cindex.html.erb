@@ -1,5 +1,9 @@
 <h1>Champion Index </h1>
 
-  <% @images.each do |img|  %>
-      <%= image_tag img %>
+  <% @champions.each do |hash|  %>
+    <% result = hash['image'] %>
+    <% result_title = hash['title'] %>
+    <a title= <% result_title %> >
+      <%= image_tag result %>
+      </a>
     <% end %>

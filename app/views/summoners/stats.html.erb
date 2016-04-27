@@ -99,4 +99,47 @@ function type(d) {
   return d;
 }
 
+
+
 <% end %>
+
+ <% @stats.each do |hash| %>
+ 
+  <% img = hash['g_img'] %>
+  <% win_bool = hash['g_win'] %>
+  <% mode = hash['g_mode'] %>
+  <% type = hash['g_type'] %>
+  <% map = hash['g_map'] %>
+  <% date = hash['g_date'] %>
+  
+  
+   <table>
+     <tr>
+           
+         <table class = 'table'>
+             
+            <tr> 
+                 <th> <%= image_tag img %> </th>
+                 <th> MODE </th>
+                 <th> RESULT </th>
+            </tr>
+            <tr>
+                <td></td>
+             <td> <%= hash['g_mode'] %> </td>
+             
+            <% if hash['g_win'] == "Victory" %>
+            
+             <td id = 'win'> <%= hash['g_win'] %> </td>
+             <% else %>
+             
+             <td id = 'loss'> <%= hash['g_win'] %> </td>
+             <% end %>
+             
+             </tr>
+             
+            
+        
+     <tr> </tr>
+   </table>
+    <% end %>
+
