@@ -207,6 +207,7 @@ class SummonersController < ApplicationController
       sessions_played = champ['id']['totalSessionsPlayed']
       wins = champ['id']['totalSessionsWon']
       losses = champ['id']['totalSessionsLost']
+    end
   end
   
 
