@@ -18,7 +18,7 @@ CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?cham
     def get_champImg(champ_id)
        response = HTTParty.get('https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/' + champ_id.to_s + '?champData=image&' + KEY + ENV["pusher_key"] )
        im = response['image']['full']
-       return ime
+       return im
     end
     
 
