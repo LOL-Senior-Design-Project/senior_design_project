@@ -1,6 +1,6 @@
 require 'riot_api_helper'
 class ChampionsController < ApplicationController
-CHAMP_SQR = "http://ddragon.leagueoflegends.com/cdn/6.5.1/img/champion/"
+CHAMP_SQR = "http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/"
     def cindex
         response = RIOT_API.new.get_champ
         @champions = parse_champion(response)

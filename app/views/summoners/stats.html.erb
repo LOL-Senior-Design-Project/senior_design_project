@@ -37,7 +37,7 @@
 
 </style>
 
-<svg class="chart"></svg>
+<svg class="chart" ></svg>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <%= javascript_tag do %>  
 
@@ -113,19 +113,36 @@ function type(d) {
   <% date = hash['g_date'] %>
   
   
-   <table>
+   <div><table>
      <tr>
            
-         <table class = 'table'>
+         <table class = 'table' >
              
             <tr> 
-                 <th> <%= image_tag img %> </th>
+                 <th rowspan="2"> <%= image_tag img %> </th>
+                 <th> ITEMS </th>
+                        
+                        
+                 
                  <th> MODE </th>
+                 <th> K/D/A </th>
                  <th> RESULT </th>
+                 
             </tr>
-            <tr>
-                <td></td>
+            <td><span class='container' id= 'items'>        
+                            <%= image_tag hash['g_i0'] %>
+                            <%= image_tag hash['g_i1'] %>
+                            <%= image_tag hash['g_i2'] %>
+                            <p> </p>
+                            <%= image_tag hash['g_i3'] %>
+                            <%= image_tag hash['g_i4'] %>
+                            <%= image_tag hash['g_i5'] %>
+                            <%= image_tag hash['g_i6'] %>
+                            </span> </td>       
              <td> <%= hash['g_mode'] %> </td>
+             <td> <%= hash['g_kills'] %> /
+             <%= hash['g_deaths'] %> / 
+             <%= hash['g_assists'] %> </td>
              
             <% if hash['g_win'] == "Victory" %>
             
@@ -140,6 +157,14 @@ function type(d) {
             
         
      <tr> </tr>
-   </table>
+   </table></div>
+   
+   
+   
+   
+   
+   
+   
+   
     <% end %>
 

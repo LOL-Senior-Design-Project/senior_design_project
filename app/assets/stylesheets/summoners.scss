@@ -9,7 +9,8 @@ body {
 }
 
 .table {
-    background: purple;
+    background-color: purple;
+    opacity: 0.8;
     text-align: center;
 }
 .table #win {
@@ -18,3 +19,15 @@ body {
 .table #loss {
     background: red;
 }
+
+.items {
+    width: 12%;
+    float:left; 
+    
+}
+span #conainter {
+    width: 90;
+    float: left;
+}
+
+    

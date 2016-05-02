@@ -15,15 +15,10 @@ CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?cham
         # method to get summoner id
     end
     
-    def get_summoner_name(id)
-        
-        
-    end
-    
     def get_champImg(champ_id)
        response = HTTParty.get('https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/' + champ_id.to_s + '?champData=image&' + KEY + ENV["pusher_key"] )
        im = response['image']['full']
-       return im
+       return ime
     end
     
 
@@ -57,6 +52,11 @@ CHAMPION = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?cham
        return "unknown"
     end
     
+    def get_ranked_stat(given_id)
+        response = HTTParty.get("https://na.api.pvp.net/api/lol/na/v1.3/stats/by-summoner/" + given_id + "/ranked?season=SEASON2016&" + KEY + ENV("pusher_key"))
+        
+        return response
+    end
     # def getchamp
     #     response = HTTParty.get(CHAMPION)
     #     return response
